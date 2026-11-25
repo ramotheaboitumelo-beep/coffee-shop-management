@@ -31,7 +31,7 @@ const [trackingError, setTrackingError] = useState("");
     
 const fetchMenu = async () => {
     try {
-        const response = await fetch('${API_URL}/api/menu');
+        const response = await fetch(`${API_URL}/api/menu`);
 
         if (!response.ok) {
             throw new Error("Failed to load menu.");
@@ -79,7 +79,7 @@ useEffect(() => {
 
         try {
             const response = await fetch(
-                '${API_URL}/api/orders',
+                `${API_URL}/api/orders`,
                 {
                     method: "POST",
                     headers: {
@@ -140,7 +140,7 @@ const trackOrder = async (orderId, code) => {
 
     try {
         const response = await fetch(
-            '${API_URL}/api/orders/track',
+            `${API_URL}/api/orders/track`,
             {
                 method: "POST",
                 headers: {
@@ -179,7 +179,7 @@ useEffect(() => {
     const refreshOrder = async () => {
         try {
             const response = await fetch(
-                '${API_URL}/api/orders/track',
+                `${API_URL}/api/orders/track`,
                 {
                     method: "POST",
                     headers: {
