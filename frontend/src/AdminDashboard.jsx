@@ -1,6 +1,6 @@
-
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import API_URL from "./api";
 
 function AdminDashboard({ token, onMenuChanged }) {
     // Order management
@@ -31,7 +31,7 @@ function AdminDashboard({ token, onMenuChanged }) {
     const fetchOrders = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/orders",
+                `${API_URL}/api/orders`,
                 { headers: authHeaders }
             );
 
@@ -53,7 +53,7 @@ function AdminDashboard({ token, onMenuChanged }) {
     const fetchMenu = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/menu"
+                `${API_URL}/api/menu`
             );
 
             if (!response.ok) {
@@ -103,8 +103,8 @@ function AdminDashboard({ token, onMenuChanged }) {
 
         try {
             const url = editingId
-                ? `http://localhost:5000/api/menu/${editingId}`
-                : "http://localhost:5000/api/menu";
+                ? `${API_URL}/api/menu/${editingId}`
+                : `${API_URL}/api/menu`;
 
             const response = await fetch(url, {
                 method: editingId ? "PUT" : "POST",
@@ -166,7 +166,7 @@ if (onMenuChanged) {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/menu/${id}`,
+                `${API_URL}/api/menu/${id}`,
                 {
                     method: "DELETE",
                     headers: authHeaders
@@ -200,7 +200,7 @@ if (onMenuChanged) {
     const updateStatus = async (id, status) => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/orders/${id}/status`,
+                `${API_URL}/api/orders/${id}/status`,
                 {
                     method: "PATCH",
                     headers: {
@@ -235,7 +235,7 @@ if (onMenuChanged) {
 
         try {
             const response = await fetch(
-                `http://localhost:5000/api/orders/${id}`,
+                `${API_URL}/api/orders/${id}`,
                 {
                     method: "DELETE",
                     headers: authHeaders

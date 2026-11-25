@@ -27,9 +27,7 @@ button {
     margin: 12px 0;
 }
 
-/* ==============================
-   HEADER
-================================= */
+/*HEADER*/
 
 .header {
     background-color: #173b3f;
@@ -53,9 +51,7 @@ button {
     font-size: 14px;
 }
 
-/* ==============================
-   BUTTONS
-================================= */
+/*BUTTONS*/
 
 .order-button {
     background-color: #c28b45;
@@ -101,9 +97,7 @@ button {
     background-color: #ad3030;
 }
 
-/* ==============================
-   CUSTOMER MENU
-================================= */
+/*CUSTOMER MENU*/
 
 .main-content {
     max-width: 1200px;

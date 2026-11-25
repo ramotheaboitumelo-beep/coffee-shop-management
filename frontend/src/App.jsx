@@ -1,4 +1,4 @@
-
+import API_URL from "./api";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import AdminDashboard from "./AdminDashboard";
@@ -31,7 +31,7 @@ const [trackingError, setTrackingError] = useState("");
     
 const fetchMenu = async () => {
     try {
-        const response = await fetch("http://localhost:5000/api/menu");
+        const response = await fetch('${API_URL}/api/menu');
 
         if (!response.ok) {
             throw new Error("Failed to load menu.");
@@ -79,7 +79,7 @@ useEffect(() => {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/orders",
+                '${API_URL}/api/orders',
                 {
                     method: "POST",
                     headers: {
@@ -140,7 +140,7 @@ const trackOrder = async (orderId, code) => {
 
     try {
         const response = await fetch(
-            "http://localhost:5000/api/orders/track",
+            '${API_URL}/api/orders/track',
             {
                 method: "POST",
                 headers: {
@@ -179,7 +179,7 @@ useEffect(() => {
     const refreshOrder = async () => {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/orders/track",
+                '${API_URL}/api/orders/track',
                 {
                     method: "POST",
                     headers: {
